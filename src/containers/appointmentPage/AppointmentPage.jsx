@@ -10,7 +10,7 @@ export default class AppointmentPage extends Form {
   };
 
   schema = {
-    title: Joi.string().required().label("Title"),
+    title: Joi.string().min(3).required().label("Title"),
     contact: Joi.string().required().label("Contact"),
     date: Joi.date().required().label("Date"),
     time: Joi.string().required().label("Time"),

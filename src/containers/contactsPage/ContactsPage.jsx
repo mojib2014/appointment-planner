@@ -14,10 +14,14 @@ export default class ContactsPage extends Form {
     name: Joi.string().min(5).required().label("Name"),
     phone: Joi.string()
       .min(10)
-      .regex(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/)
+      .regex(/(415) 333-3333/)
       .required()
       .label("Phone Number"),
-    email: Joi.string().email().required().label("Email"),
+    email: Joi.string()
+      .email()
+      .regex(/email@email.com/)
+      .required()
+      .label("Email"),
   };
 
   doSubmit = () => {
@@ -41,7 +45,7 @@ export default class ContactsPage extends Form {
           <form onSubmit={this.handleSubmit}>
             {this.renderInput("name", "Name: John Doe")}
             {this.renderInput("phone", "Phone#: (415) 333-3333")}
-            {this.renderInput("email", "Email: johnDoe@email.com")}
+            {this.renderInput("email", "Email: johnDoe@email.com", "email")}
             {this.renderButton(
               "Submit",
               "submit-btn",
