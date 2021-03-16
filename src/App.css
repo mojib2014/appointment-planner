@@ -1,38 +1,112 @@
+#root {
+  padding: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .App {
-  text-align: center;
+  width: 50%;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (max-width: 1000px) {
+  .App {
+    width: 100%;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  #root {
+    padding: 5px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav > a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+  margin-right: 30.5px;
+  text-decoration-line: none;
 }
 
-.App-link {
-  color: #61dafb;
+nav > a.active {
+  text-decoration-line: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #979797;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+section {
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #979797;
+  margin: 20px 0;
+}
+
+button {
+  background: #03a8d8;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+input,
+select {
+  font-family: "Open Sans", sans-serif;
+  background: #ffffff;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  padding: 7px 9.5px 9px 9.5px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.alert {
+  background-color: darksalmon;
+  color: darkred;
+  font-size: 14px;
+  width: auto;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.tile {
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.tile.tile-title {
+  font-weight: bold;
+}
+
+.tile-container {
+  border-bottom: 1px solid #333;
+  padding: 2px 0;
+  margin-bottom: 10px;
 }
