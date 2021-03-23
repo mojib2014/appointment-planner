@@ -14,12 +14,12 @@ export default class ContactsPage extends Form {
     name: Joi.string().min(5).required().label("Name"),
     phone: Joi.string()
       .min(10)
-      .regex(/(415) 333-3333/)
+      .regex(/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/, "(415) 333-3333")
       .required()
       .label("Phone Number"),
     email: Joi.string()
       .email()
-      .regex(/email@email.com/)
+      .regex(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "email@email.com")
       .required()
       .label("Email"),
   };
