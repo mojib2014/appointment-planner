@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
-import Form from "../../components/common/form/Form";
-import TileList from "../../components/tileList/TileList";
+import Form from "../components/common/form/Form";
+import TileList from "../components/tileList/TileList";
 
 export default class AppointmentPage extends Form {
   state = {

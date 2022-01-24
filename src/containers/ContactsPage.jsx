@@ -1,7 +1,6 @@
-import React from "react";
 import Joi from "joi-browser";
-import TileList from "../../components/tileList/TileList";
-import Form from "../../components/common/form/Form";
+import TileList from "../components/tileList/TileList";
+import Form from "../components/common/form/Form";
 
 export default class ContactsPage extends Form {
   state = {
@@ -19,7 +18,7 @@ export default class ContactsPage extends Form {
       .label("Phone Number"),
     email: Joi.string()
       .email()
-      .regex(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "email@email.com")
+      .regex(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/, "email@email.com")
       .required()
       .label("Email"),
   };
@@ -27,10 +26,9 @@ export default class ContactsPage extends Form {
   doSubmit = () => {
     const { data, duplicateName } = this.state;
     for (const item of this.props.items) {
-      if (item.name === data.name)
-        return this.setState({ duplicateName: true });
+      if (item.name === data.name) this.setState({ duplicateName: true });
     }
-    if (duplicateName) return "Contact exists";
+    if (duplicateName) return <h2>Contact exists</h2>;
     else {
       this.props.onAddContact(data);
       this.setState({ data: { name: "", phone: "", email: "" } });
@@ -38,6 +36,7 @@ export default class ContactsPage extends Form {
   };
 
   render() {
+    console.log("contacts page render");
     return (
       <div>
         <section>
